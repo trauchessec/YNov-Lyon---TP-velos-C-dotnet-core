@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<di class="text-center">
+    <h1>Bienvenue</h1>
+    <h2>Projet initié par Romain Trauchessec</h2>
+</di>
+<div class="pt-5">
+    <h3 class="pb-4">Vue d'ensemble du projet</h3>
+    <p>Nous allons développer ensemble une application web en utilisant la technologie ASP.Net Core de Microsoft. Cette application aura pour but de vous permettre de consulter en temps réel, la disponibilité des vélos et places dans les stations VeloV de Lyon et son agglomération.</p>
+    <p class="m-0">Dans ce TP, vous allez pouvoir vous confronter aux points suivants :</p>
+        <ul class="m-0">Créer une application web</ul>
+        <ul class="m-0">Enregistrer votre code sur une plateforme Git telle que Github ou Bitbucket</ul>
+        <ul class="m-0">Lire et enregistrer des données depuis une base SQL</ul>
+        <ul class="m-0">Consommer des données temps réel issues d'une API publique</ul>
+        <ul class="m-0">Afficher les données sous forme de tableau et de carte interactive</ul>
+        <ul class="m-0">Déployer votre application sur un serveur accessible en ligne</ul>
+</div>
+<div class="pt-5">
+    <h3 class="pb-4">Liste des objectifs :</h3>
+    <section>
+        <div>
+            <ul class="check-list">
+                <li>
+                    Avoir une application ASP.Net Core de base nommée "BikeWatcher" qui tourne sur sa machine
+                    Démarrer un site avec asp dotnet core :  https://docs.microsoft.com/fr-fr/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-3.1&tabs=visual-studio
+                </li>
+                <li>
+                    Créer un repository public sur github, bitbucket ou gitlab pour héberger votre code.
+                    gitignore de base pour .NET Core :  https://gist.github.com/vmandic/ac2ecc9c24f6899ee0ec46e4ce444a0e
+                </li>
+                <li>Publier votre code sur le repository à chaque avancée</li>
+                <li>Supprimer du menu les pages de bases pour 2 liens de menu fonctionnels vers les pages vides suivantes : "Accueil", "Liste des stations", "Carte", "Mes favoris"</li>
+                <li>Compléter la pages "Accueil" pour présenter votre travail, votre nom/prenom, cette liste d'objectifs (que vous rayerez au fur et à mesure) et l'URL où votre code source est visible</li>
+            </ul>
+            <ul class="not-check-list">
+                <li>
+                    Se brancher sur l'API VeloV du grand Lyon pour récupérer les données en temps réel
+                    API OpenData du Grand Lyon : https://public.opendatasoft.com/explore/dataset/station-velov-grand-lyon/api/?flg=fr
+                    Lire des données issues d'un flux JSON :  https://docs.microsoft.com/fr-fr/dotnet/csharp/tutorials/console-webapiclient
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </section>
+    <style>
+        .check-list {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+            .check-list li {
+                position: relative;
+                list-style-type: none;
+                padding-left: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+        .not-check-list {
+            margin: 0;
+            padding-left: 1.2rem;
+        }
+
+            .not-check-list li {
+                position: relative;
+                list-style-type: none;
+                padding-left: 2.5rem;
+                margin-bottom: 0.5rem;
+            }
+
+        .check-list li:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -2px;
+            width: 5px;
+            height: 11px;
+            border-width: 0 2px 2px 0;
+            border-style: solid;
+            border-color: #00a8a8;
+            transform-origin: bottom left;
+            transform: rotate(45deg);
+        }
+    </style>
+</div>
+<div class="pt-5">
+    <h3>URL du code source de l'aplication disponible <a href="https://github.com/trauchessec/YNov-Lyon---TP-velos-C-dotnet-core" target="_blank">ici</a></h3>
+</div>

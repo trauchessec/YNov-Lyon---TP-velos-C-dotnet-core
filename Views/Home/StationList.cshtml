@@ -1,0 +1,23 @@
+﻿@model List<Stations>
+@{
+    ViewData["Title"] = "StationList";
+}
+
+<h1 class="pb-4">Liste des stations</h1>
+
+<div class="row">
+    <div class="col-6">
+        <h3>Nom des stations</h3>
+        @foreach (var Stations in Model)
+        {
+            <p>@Stations.name</p>
+        }
+    </div>
+    <div class="col-6">
+        <h3>Vélo disponible</h3>
+        @foreach (var Stations in Model)
+        {
+            <p>@Stations.available_bike_stands</p>
+        }
+    </div>
+</div>

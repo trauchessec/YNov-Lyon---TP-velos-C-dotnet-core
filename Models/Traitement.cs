@@ -17,7 +17,18 @@ namespace BikeWatcher.Models
             var traitement = await JsonSerializer.DeserializeAsync<Values>(await streamTask);
             var data = traitement.values;
             return data;
+        }
 
+        public static async Task<List<Stations>> FindStationBordeaux()
+        {
+            var streamTask = client.GetStreamAsync("https://api.alexandredubois.com/vcub-backend/vcub.php");
+            var bs = await JsonSerializer.DeserializeAsync<List<StationBordeaux>>(await streamTask);
+            List<Stations> s = new List<Stations>();
+            foreach(var b in bs)
+            {
+                s.Add(new Stations(b));
+            }
+            return s;
         }
     }
 }

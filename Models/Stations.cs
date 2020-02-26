@@ -2,11 +2,29 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BikeWatcher.Tools;
+using System.Globalization;
+using BikeWatcher.Models;
 
 namespace BikeWatcher.Models
 {
     public class Stations
     {
+        public Stations()
+        {
+
+        }
+
+        public Stations(StationBordeaux bordeaux)
+        {
+            available_bikes = bordeaux.bike_count_total.ToString();
+            lng = bordeaux.longitude;
+            lat = bordeaux.latitude;
+            bike_stands = bordeaux.slot_count.ToString();
+            name = bordeaux.name;
+            available_bike_stands = bordeaux.slot_count.ToString();
+        }
+
         public string number { get; set; }
         public string pole { get; set; }
         public string available_bikes { get; set; }
@@ -35,5 +53,10 @@ namespace BikeWatcher.Models
         public string name { get; set; }
         public string banking { get; set; }
         public string nmarrond { get; set; }
+
+        public double CompareDistance(double latitudeUser, double longitudeUser)
+        {
+            return DistanceGeo.GetDistanceBetweenPoints(double.Parse(lat, CultureInfo.InvariantCulture), double.Parse(lng, CultureInfo.InvariantCulture), latitudeUser, longitudeUser);
+        }
     }
 }

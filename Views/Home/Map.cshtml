@@ -32,7 +32,7 @@
                         "lon": "@Station.lng",
                         "name": "@Station.name",
                         "nbPlace" : "@Station.available_bike_stands",
-                        "nbVelo" : "@Station.bike_stands"
+                        "nbVelo" : "@Station.bike_stands",
                     },
                     </text> 
                 }
@@ -51,7 +51,7 @@
             }).addTo(macarte);
             for (station in this.Stations) {
                 var marker = L.marker([Stations[station].lat, Stations[station].lon]).addTo(macarte);
-                marker.bindPopup(Stations[station].name + " velos dispo:" + Stations[station].nbVelo + "\r places dispo:" + Stations[station].nbPlace);
+                marker.bindPopup("Stations[station].name + " Velos disponible:" + Stations[station].nbVelo + "\r Places disponible:" + Stations[station].nbPlace);
         }
 }
         window.onload = function () {

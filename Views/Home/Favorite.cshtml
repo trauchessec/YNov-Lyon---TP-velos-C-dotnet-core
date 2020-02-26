@@ -1,7 +1,13 @@
-﻿
+﻿@model BikeWatcher.Models.FavorisModel
 @{
     ViewData["Title"] = "Favorite";
+    List<Stations> favs = ViewBag.favs;
+    
 }
 
 <h1>Favoris</h1>
 
+@foreach (var fav in favs)
+{
+    <p>@fav.name favoris</p>
+}
